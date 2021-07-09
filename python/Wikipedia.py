@@ -1,3 +1,4 @@
+# Databricks notebook source
 # 
 # Wikipedia Clickstream
 # An example Delta Live Tables pipeline that ingests wikipedia click stream data and builds some simple summary tables.
@@ -69,7 +70,7 @@ def top_spark_referrers():
 )
 def top_pages():
   return (
-    dlt.read("clickstream_clean")
+    dlt.read(`"clickstream_clean")
       .groupBy("current_page_title")
       .agg(sum("click_count").alias("total_clicks"))
       .sort(desc("total_clicks"))
