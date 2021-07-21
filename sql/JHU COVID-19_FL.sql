@@ -29,7 +29,7 @@ SELECT get_json_object(_rescued_data, "$.FIPS") AS fips,
        get_json_object(_rescued_data, "$.Case_Fatality_Ratio") AS case_fatality_ratio,
        get_json_object(_rescued_data, "$.Incident_Rate") AS incident_rate,
        last_update,
-       TO_DATE(REPLACE(REPLACE(source_file_name, "/databricks-datasets/COVID/CSSEGISandData/json/", ""), ".json")) AS curr_date
+       TO_DATE(REPLACE(REPLACE(source_file_name, "/dbfs/gaurav/datasets/covid/CSSEGISandData/json/", ""), ".json")) AS curr_date
   FROM LIVE.jhu_covid19_raw
 
 -- COMMAND ----------
