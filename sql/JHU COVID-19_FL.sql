@@ -6,7 +6,7 @@ SET spark.databricks.cloudFiles.schemaInference.sampleSize.numFiles = 2
 CREATE INCREMENTAL LIVE TABLE jhu_covid19_raw
 COMMENT "The raw Johns Hopkins COVID-19 dataset, ingested from /databricks-datasets."
 TBLPROPERTIES ("quality" = "bronze")
-AS SELECT *, input_file_name() AS source_file_name  FROM json.`dbfs:/gaurav/datasets/covid/CSSEGISandData/json/`
+AS SELECT *, input_file_name() AS source_file_name  FROM json.`/dbfs/gaurav/datasets/covid/CSSEGISandData/json/`
 
 -- COMMAND ----------
 
